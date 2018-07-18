@@ -1,0 +1,13 @@
+# Database Cleaner configuration
+
+DatabaseCleaner.strategy = :truncation
+
+RSpec.configure do |config|
+  config.before(:each) do
+    DatabaseCleaner.clean
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+end
